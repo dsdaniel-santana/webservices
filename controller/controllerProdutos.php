@@ -20,4 +20,13 @@ class controllerProdutos {
         }
     }
 
+    public function atualizarProduto ($nome, $preco, $id_categoria, $descricao, $imagem){
+        try{
+            $modelProdutos = new modelProdutos();
+            return $modelProdutos->atualizarProduto($nome, $preco, $id_categoria, $descricao, $imagem);
+        } catch (PDOException $e){
+            return false;
+        }
+    }
+
 }
