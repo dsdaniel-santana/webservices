@@ -1,5 +1,8 @@
-id_categoria INT AUTO_INCREMENT
-nome_categoria VARCHAR(50)
-id_status INT
-data_cadastro DATETIME
-data_atualizacao DATETIME
+CREATE TABLE tbl_categorias(
+    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
+    nome_categoria VARCHAR(50),
+    id_status INT,
+    data_cadastro DATETIME,
+    data_atualizacao DATETIME
+)
+

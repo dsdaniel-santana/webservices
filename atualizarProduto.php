@@ -15,7 +15,7 @@ $imagem = $data["imagem"];
 $id_produto = $data["id_produto"];
 
 $controllerProdutos = new controllerProdutos();
-$resultado = $controllerProdutos->atualizarProduto($nome, $preco, $id_categoria, $descricao, $imagem, $id_produto);
+$resultado = $controllerProdutos->atualizarProduto($nome, $preco, $id_categoria, $id_status, $descricao, $imagem, $id_produto);
 if($resultado) echo "deu bom";
 
 ?>

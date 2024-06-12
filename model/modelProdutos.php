@@ -33,7 +33,7 @@ class modelProdutos {
         }
     }
 
-    public function atualizarProduto ($nome, $preco, $id_categoria, $descricao, $imagem){
+    public function atualizarProduto ($nome, $preco, $id_categoria, $id_status, $descricao, $imagem, $id_produto){
         try {
             $pdo = Database::conexao();
             $atualizar= $pdo->prepare("UPDATE tbl_produtos SET nome_produto = :nome, id_categoria = :id_categoria, id_status = :id_status, preco = :preco, imagem = :imagem, id_status = :id_status, data_atualizacao = now() WHERE id_produto = :id_produto");
@@ -44,6 +44,8 @@ class modelProdutos {
             $atualizar->bindParam(":imagem", $imagem);
             $atualizar->bindParam(":id_status", $id_status);
             $atualizar->bindParam(":id_produto", $id_produto);
+
+            $atualizar->execute();
             
             return true;
 
