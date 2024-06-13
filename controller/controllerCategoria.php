@@ -22,14 +22,6 @@ class controllerCategoria{
         }
     }
 
-    public function atualizarCategoria($nome_categoria, $id_status, $id_categoria) {
-        try{
-            $modelCategorias = new modelCategorias();
-            return $modelCategorias->atualizarCategoria($nome_categoria, $id_status, $id_categoria);
-        } catch (PDOException $e){
-            return false;
-        }
-    }
 
 
 
