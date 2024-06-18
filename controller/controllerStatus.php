@@ -1,5 +1,5 @@
 <?php
-class controllerCategoria{
+class controllerStatus{
 
     public function listarStatus(){
         try{

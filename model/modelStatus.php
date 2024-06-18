@@ -16,7 +16,7 @@ class modelStatus{
         try{
             $pdo = Database::conexao();
             $inserir = $pdo->prepare("INSERT INTO tbl_status
-            (nome_status, data_cadastro) VALUES (:nome_status, now()" );
+            (nome_status, data_cadastro) VALUES (:nome_status, now())" );
 
             $inserir->bindParam(':nome_status', $nome_status);
             $inserir->execute();
@@ -24,6 +24,7 @@ class modelStatus{
             return true;
         } catch (PDOException $e){
             return false;
+
         }
 
     }
@@ -32,7 +33,7 @@ class modelStatus{
         try{
             $pdo = Database::conexao();
             $atualizar = $pdo->prepare("UPDATE tbl_status
-            SET status_nome = :status_nome,
+            SET nome_status = :nome_status,
             data_atualizacao = now()
             WHERE id_status = :id_status" );
             $atualizar->bindParam(":nome_status", $nome_status);
